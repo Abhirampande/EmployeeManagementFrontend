@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Box, TextField, Button, Typography, Paper, Grid} from '@mui/material';
 import { useNavigate, useParams } from "react-router-dom";
 import EmployeeService from "../services/EmployeeService";
 import { Link } from "react-router-dom";
@@ -37,7 +38,7 @@ const EditEmployee = () => {
         setEmployee({ ...employee, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleUpdate = (e) => {
         e.preventDefault();
         if (validate()) {
             EmployeeService.updateEmployee(id, employee).then(() => {
@@ -46,11 +47,111 @@ const EditEmployee = () => {
         }
     };
 
+    
+
+return (
+    <div>
+    <Box
+      sx={{
+        minHeight: '100vh',
+        backgroundImage: 'url("/blue.jpg")', // Replace with your actual path
+        backgroundSize: 'cover',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        p: 2,
+      }}
+    >
+      <Paper elevation={6} sx={{ p: 4, width: '100%', maxWidth: 600 }}>
+        <Typography variant="h5" gutterBottom align="center">
+          EDIT EMPLOYEE
+        </Typography>
+
+        <Box component="form" onSubmit={handleUpdate}>
+          <Grid container spacing={2}>
+            <Grid item xs={12}>
+              <TextField
+                name="name"
+                label="Name"
+                fullWidth
+                required
+                value={employee.name}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                name="age"
+                label="Age"
+                type="number"
+                fullWidth
+                required
+                value={employee.age}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                name="department"
+                label="Department"
+                fullWidth
+                required
+                value={employee.department}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                name="email"
+                label="Email"
+                type="email"
+                fullWidth
+                required
+                value={employee.email}
+                onChange={handleChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                name="mobile"
+                label="Mobile"
+                type="tel"
+                fullWidth
+                required
+                value={employee.mobile}
+                onChange={handleChange}
+              />
+            </Grid>
+          </Grid>
+
+          <Box mt={3} textAlign="center">
+            <Button
+              type="submit"
+              variant="contained"
+              sx={{
+                backgroundColor: '#7b1fa2',
+                px: 4,
+                py: 1,
+                fontSize: '1rem',
+                borderRadius: '20px',
+                '&:hover': { backgroundColor: '#6a1b9a' },
+              }}
+            >
+              Update
+            </Button>
+          </Box>
+        </Box>
+      </Paper>
+    </Box>
     <div style={{ marginTop: "20px", textAlign: "center"}}>
                 <Link to="/" className="btn">Back to Home</Link>
             </div>
+    </div>
+  );
 
-    return (
+
+
+    /*return (
         <div>
             <h2>Edit Employee</h2>
             <form onSubmit={handleSubmit}>
@@ -73,7 +174,7 @@ const EditEmployee = () => {
             </form>
         </div>
         
-    );
+    );*/
 };
 
 export default EditEmployee;

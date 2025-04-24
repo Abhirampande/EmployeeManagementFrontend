@@ -46,15 +46,16 @@ const AddEmployee = () => {
         }
     };
 
-    <div style={{ marginTop: "20px", textAlign: "center"}}>
-                <Link to="/" className="btn">Back to Home</Link>
-    </div>
+    
 
 return (
+  <div>
     <Box
       sx={{
         minHeight: '100vh',
-        background: 'linear-gradient(to right, #e0f7fa, #80deea)',
+        backgroundImage: 'url("/scene.jpg")', // Replace with your actual path
+        backgroundSize: 'cover',
+        
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -140,9 +141,18 @@ return (
             </Button>
           </Box>
         </Box>
+      
       </Paper>
+      
     </Box>
+          <div style={{ marginTop: "20px", textAlign: "center"}}>
+                <Link to="/" className="btn">Back to Home</Link>
+          </div>
+   
+          </div>
   );
+
+  
     
 
  /*return (
