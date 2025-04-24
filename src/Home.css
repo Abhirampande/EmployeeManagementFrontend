@@ -1,25 +1,25 @@
-.home-container {
-    text-align: center;
-    background-color: #22213d;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
+.bord{
+    border: 3px solid #032b03;
+    border-width: 5px;
+    border-radius: 60px;
+}
 h1 {
+    text-align: center;
+    font-size: 4.0rem;
+    right: 50px;
+    
+}
+p{
+    text-align: center;
     font-size: 2.5rem;
 }
 
-p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
 
 .buttons {
     display: flex;
+    display: flex;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -27,12 +27,14 @@ p {
     background-color: #24babc;
     color: white;
     padding: 10px 20px;
+    border: none;
     text-decoration: none;
     font-size: 1.2rem;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: 0.3s;
+    
 }
 
 .btn:hover {
-    background-color: #e64a19;
+    background-color: #214770;
 }

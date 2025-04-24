@@ -40,9 +40,7 @@ button, a {
     border-radius: 4px;
 }
 
-button:hover, a:hover {
-    background-color: #e64a19;
-}
+
 .btn {
     background-color: #ff5722;
     color: white;
@@ -88,5 +86,9 @@ span {
 
 .center {
     text-align: center;
+}
+.Empheading{
+    color: #333;
+    font-weight: bold;
 }
 
